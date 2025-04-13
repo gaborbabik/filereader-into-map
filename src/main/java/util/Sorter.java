@@ -1,7 +1,7 @@
 package util;
 
 import model.Book;
-import model.SortedBook;
+import model.BookBasic;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,11 +9,11 @@ import java.util.Map;
 
 public class Sorter {
 
-    public static Map<String, ArrayList<SortedBook>> sort(Map<Integer, String> categories, Book[] books) {
-        Map<String, ArrayList<SortedBook>> categoryMap = new HashMap<String, ArrayList<SortedBook>>();
+    public static Map<String, ArrayList<BookBasic>> sort(Map<Integer, String> categories, Book[] books) {
+        Map<String, ArrayList<BookBasic>> categoryMap = new HashMap<String, ArrayList<BookBasic>>();
 
         for (Map.Entry<Integer, String> entry : categories.entrySet()) {
-            ArrayList<SortedBook> list = new ArrayList<SortedBook>();
+            ArrayList<BookBasic> list = new ArrayList<BookBasic>();
 
             for (Book book : books) {
                 if (book.getCategoryNumber() == entry.getKey()) {
@@ -22,7 +22,7 @@ public class Sorter {
                     String publisher = book.getPublisher();
                     String publishedDate = book.getPublishedDate();
                     String isbn = book.getIsbn();
-                    list.add(new SortedBook(author, title, publisher, publishedDate, isbn));
+                    list.add(new BookBasic(author, title, publisher, publishedDate, isbn));
                 }
             }
             categoryMap.putIfAbsent(entry.getValue(), list);

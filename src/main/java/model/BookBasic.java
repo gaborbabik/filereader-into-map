@@ -1,6 +1,6 @@
 package model;
 
-public class SortedBook {
+public class BookBasic {
 
     private String author;
     private String title;
@@ -8,10 +8,10 @@ public class SortedBook {
     private String publishedDate;
     private String isbn;
 
-    public SortedBook() {
+    public BookBasic() {
     }
 
-    public SortedBook(String author, String title, String publisher, String publishedDate, String isbn) {
+    public BookBasic(String author, String title, String publisher, String publishedDate, String isbn) {
         this.author = author;
         this.title = title;
         this.publisher = publisher;
