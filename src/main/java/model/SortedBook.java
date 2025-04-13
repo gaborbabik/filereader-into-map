@@ -1,30 +1,23 @@
 package model;
 
-public class Book {
+public class SortedBook {
 
-    private int categoryNumber;
     private String author;
     private String title;
     private String publisher;
     private String publishedDate;
     private String isbn;
 
-    public Book() {
+    public SortedBook() {
     }
 
-    public Book(int categoryNumber, String author, String title, String publisher, String publishedDate, String isbn) {
-
-        this.categoryNumber = categoryNumber;
+    public SortedBook(String author, String title, String publisher, String publishedDate, String isbn) {
         this.author = author;
         this.title = title;
         this.publisher = publisher;
         this.publishedDate = publishedDate;
         this.isbn = isbn;
     }
-
-    public int getCategoryNumber() { return categoryNumber; }
-
-    public void setCategoryNumber(int categoryNumber) { this.categoryNumber = categoryNumber; }
 
     public String getAuthor() {
         return author;
@@ -68,9 +61,8 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "categoryNumber=" + categoryNumber +
-                ", author='" + author + '\'' +
+        return "SortedBook{" +
+                "author='" + author + '\'' +
                 ", title='" + title + '\'' +
                 ", publisher='" + publisher + '\'' +
                 ", publishedDate='" + publishedDate + '\'' +
