@@ -10,7 +10,7 @@ import java.util.Map;
 public class Sorter {
 
     public static Map<String, ArrayList<BookBasic>> sort(Map<Integer, String> categories, Book[] books) {
-        Map<String, ArrayList<BookBasic>> categoryMap = new HashMap<String, ArrayList<BookBasic>>();
+        Map<String, ArrayList<BookBasic>> categoriesOutput = new HashMap<String, ArrayList<BookBasic>>();
 
         for (Map.Entry<Integer, String> entry : categories.entrySet()) {
             ArrayList<BookBasic> list = new ArrayList<BookBasic>();
@@ -25,10 +25,10 @@ public class Sorter {
                     list.add(new BookBasic(author, title, publisher, publishedDate, isbn));
                 }
             }
-            categoryMap.putIfAbsent(entry.getValue(), list);
+            categoriesOutput.putIfAbsent(entry.getValue(), list);
         }
 
-        return categoryMap;
+        return categoriesOutput;
     }
 
     private Sorter() {
