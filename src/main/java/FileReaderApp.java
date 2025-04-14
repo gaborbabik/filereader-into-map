@@ -12,9 +12,9 @@ public class FileReaderApp {
 
         Map<Integer, String> categories = FileReader.getInstance().readCategories(FileReader.CATEGORY_FILE_PATH);
         Book[] books = FileReader.getInstance().readBook(FileReader.BOOKS_FILE_PATH);
-        Map<String, ArrayList<BookBasic>> bookMap = Sorter.sort(categories, books);
+        Map<String, ArrayList<BookBasic>> booksByCategory = Sorter.sort(categories, books);
 
-        for (Map.Entry<String, ArrayList<BookBasic>> entry : bookMap.entrySet()) {
+        for (Map.Entry<String, ArrayList<BookBasic>> entry : booksByCategory.entrySet()) {
             System.out.println(entry.getKey() + " : ");
             for (BookBasic book : entry.getValue()) {
                 System.out.println(book.toString());
